@@ -4,7 +4,7 @@
 const defaultData = {
     profile: {
         name: "Billy Joe Cruzada",
-        title: "Graphic Designer | Photographer | Photo Editor | Generative AI Specialist",
+        title: "Graphic Designer | Video Editor | Photographer | Photo Editor | Generative AI Specialist",
         bio: "Creative professional with 5+ years of experience specializing in brand identity, digital design, and creative direction. Passionate about transforming ideas into compelling visual stories.",
         image: "Billy ID.jpg"
     },
@@ -15,12 +15,12 @@ const defaultData = {
         email: "billyjoecruzada12@gmail.com"
     },
     featured: [
-        { id: 1, src: "Elements/Designs/Food Product Design/(1) Primary Logo.jpg", title: "Kamote Chips", category: "Food Product Design" },
-        { id: 2, src: "Elements/Designs/Food Product Design/(3) Best-seller-A.jpg", title: "Kamote Chips Ad", category: "Food Product Design" },
+        { id: 1, src: "Elements/Designs/Food Product Design/(1) Primary Logo.jpg", title: "Kamote Crisps", category: "Food Product Design" },
+        { id: 2, src: "Elements/Designs/Food Product Design/(3) Best-seller.jpg", title: "Kamote Crisps Ad", category: "Food Product Design" },
         { id: 3, src: "Elements/Designs/Health and Wellness/(5) Passiflora front cover.jpg", title: "Passiflora", category: "Health & Wellness" },
         { id: 4, src: "Elements/Designs/Health and Wellness/(7) Pefume Mockup -- Passiflora 001 Burning desire 1x1.jpg", title: "Passiflora Mockup", category: "Health & Wellness" },
         { id: 5, src: "Elements/Designs/Print Designs/Nmax ii color 1 variation.png", title: "Nmax Design", category: "Print" },
-        { id: 6, src: "Elements/Designs/Print Designs/Shirt mockup.jpg", title: "Shirt Design", category: "Print" }
+        { id: 6, src: "Elements/Designs/Shopify - Berrimora/Logo.png", title: "Berrimora Shopify", category: "Shopify" }
     ],
     gallery: [
         { id: 1, src: "Elements/Photography/1x1 format IG 2.jpg", title: "Portrait", category: "portrait" },
@@ -52,15 +52,16 @@ const defaultData = {
     showcases: [
         {
             id: 1,
-            title: "Kamote Chips Branding",
+            title: "Kamote Crisps Branding",
             category: "Food Product Design",
-            tools: ["Ai", "Ps"],
+            tools: ["Ai", "Ps", "Ae"],
             visible: true,
             images: [
                 "Elements/Designs/Food Product Design/(1) Primary Logo.jpg",
                 "Elements/Designs/Food Product Design/(2) Front - Kamote behanc.jpg",
-                "Elements/Designs/Food Product Design/(3) Best-seller-A.jpg",
-                "Elements/Designs/Food Product Design/(4) Kamote-Chips-ad-001.jpg"
+                "Elements/Designs/Food Product Design/(3) Best-seller.jpg",
+                "Elements/Designs/Food Product Design/(4) Kamote-Chips-ad-001.jpg",
+                "Elements/Designs/Food Product Design/(5) Kamote chips ads sample.mov"
             ]
         },
         {
@@ -90,6 +91,21 @@ const defaultData = {
                 "Elements/Designs/Print Designs/Nmax mock up.jpg",
                 "Elements/Designs/Print Designs/Shirt mockup.jpg",
                 "Elements/Designs/Print Designs/Shirt mockup 2.jpg"
+            ]
+        },
+        {
+            id: 4,
+            title: "Berrimora Shopify Store",
+            category: "Shopify",
+            tools: ["Ps", "Figma"],
+            visible: true,
+            images: [
+                "Elements/Designs/Shopify - Berrimora/Logo.png",
+                "Elements/Designs/Shopify - Berrimora/Berrimora snaps 01.PNG",
+                "Elements/Designs/Shopify - Berrimora/Berrimora snaps 02.PNG",
+                "Elements/Designs/Shopify - Berrimora/Berrimora snaps 03.PNG",
+                "Elements/Designs/Shopify - Berrimora/Backdrop.jpg",
+                "Elements/Designs/Shopify - Berrimora/Mobile View.jpg"
             ]
         }
     ],
@@ -149,6 +165,7 @@ const servicesGrid = document.getElementById('servicesGrid');
 const showcasesGrid = document.getElementById('showcasesGrid');
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightboxImage');
+const lightboxVideo = document.getElementById('lightboxVideo');
 const lightboxTitle = document.getElementById('lightboxTitle');
 const lightboxCounter = document.getElementById('lightboxCounter');
 const lightboxTools = document.getElementById('lightboxTools');
@@ -212,9 +229,13 @@ function renderShowcases() {
         showcasesGrid.innerHTML = '<p style="color: var(--text-secondary); text-align: center; grid-column: 1/-1;">No showcases available.</p>';
         return;
     }
+
+    const isVideoFile = (src) => /\.(mov|mp4|webm)$/i.test(src);
     
     showcasesGrid.innerHTML = visibleShowcases.map((showcase, index) => {
-        const previewImages = showcase.images.slice(0, 3);
+        const previewImages = showcase.images
+            .filter(img => !isVideoFile(img))
+            .slice(0, 3);
         const gridClass = previewImages.length >= 3 ? 'showcase-grid-2x2' : '';
         const toolsHtml = showcase.tools && showcase.tools.length > 0 
             ? `<div class="showcase-tools">${showcase.tools.map(t => `<span class="showcase-tool-badge">${t}</span>`).join('')}</div>` 
@@ -278,6 +299,8 @@ function renderServices() {
 
 // Navigation
 function handleScroll() {
+    if (!nav || !sections.length) return;
+    
     if (window.scrollY > 100) {
         nav.classList.add('scrolled');
     } else {
@@ -291,7 +314,7 @@ function handleScroll() {
             current = section.getAttribute('id');
         }
     });
-
+    
     document.querySelectorAll('.nav-links > li > a').forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
@@ -301,6 +324,11 @@ function handleScroll() {
 }
 
 window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', () => {
+    handleScroll();
+    setTimeout(handleScroll, 100);
+    setTimeout(handleScroll, 500);
+});
 
 // Mobile Menu
 mobileMenuBtn.addEventListener('click', () => {
@@ -318,10 +346,27 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 // Lightbox
 let currentGalleryIndex = 0;
 
+function isVideoFile(src) {
+    return /\.(mov|mp4|webm)$/i.test(src);
+}
+
 function openLightbox(index, gallery = data.gallery, title = '', tools = []) {
     currentGallery = gallery;
     currentGalleryIndex = index;
-    lightboxImage.src = currentGallery[currentGalleryIndex].src;
+    const currentSrc = currentGallery[currentGalleryIndex].src || currentGallery[currentGalleryIndex];
+    
+    if (isVideoFile(currentSrc)) {
+        lightboxImage.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = currentSrc;
+        lightboxVideo.play();
+    } else {
+        lightboxVideo.style.display = 'none';
+        lightboxVideo.pause();
+        lightboxImage.style.display = 'block';
+        lightboxImage.src = currentSrc;
+    }
+    
     lightboxTitle.textContent = title || '';
     lightboxCounter.textContent = `${currentGalleryIndex + 1} / ${currentGallery.length}`;
     
@@ -338,18 +383,44 @@ function openLightbox(index, gallery = data.gallery, title = '', tools = []) {
 
 function closeLightbox() {
     lightbox.classList.remove('active');
+    lightboxVideo.pause();
+    lightboxVideo.src = '';
     document.body.style.overflow = '';
 }
 
 function nextImage() {
     currentGalleryIndex = (currentGalleryIndex + 1) % currentGallery.length;
-    lightboxImage.src = currentGallery[currentGalleryIndex].src;
+    const currentSrc = currentGallery[currentGalleryIndex].src || currentGallery[currentGalleryIndex];
+    
+    if (isVideoFile(currentSrc)) {
+        lightboxImage.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = currentSrc;
+        lightboxVideo.play();
+    } else {
+        lightboxVideo.style.display = 'none';
+        lightboxVideo.pause();
+        lightboxImage.style.display = 'block';
+        lightboxImage.src = currentSrc;
+    }
     lightboxCounter.textContent = `${currentGalleryIndex + 1} / ${currentGallery.length}`;
 }
 
 function prevImage() {
     currentGalleryIndex = (currentGalleryIndex - 1 + currentGallery.length) % currentGallery.length;
-    lightboxImage.src = currentGallery[currentGalleryIndex].src;
+    const currentSrc = currentGallery[currentGalleryIndex].src || currentGallery[currentGalleryIndex];
+    
+    if (isVideoFile(currentSrc)) {
+        lightboxImage.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = currentSrc;
+        lightboxVideo.play();
+    } else {
+        lightboxVideo.style.display = 'none';
+        lightboxVideo.pause();
+        lightboxImage.style.display = 'block';
+        lightboxImage.src = currentSrc;
+    }
     lightboxCounter.textContent = `${currentGalleryIndex + 1} / ${currentGallery.length}`;
 }
 
@@ -397,6 +468,34 @@ showcasesGrid.addEventListener('click', (e) => {
             openLightbox(0, showcase.images.map((src, i) => ({ src, title: showcase.title })), showcase.title, showcase.tools || []);
         }
     }
+});
+
+// Video Card Hover & Click
+document.querySelectorAll('.video-card').forEach(card => {
+    const video = card.querySelector('video');
+    
+    card.addEventListener('mouseenter', () => {
+        if (video) {
+            video.currentTime = 0;
+            video.play().catch(() => {});
+        }
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+    });
+    
+    card.addEventListener('click', () => {
+        const videoSrc = card.dataset.video;
+        const videoTitle = card.dataset.title;
+        const videoTools = card.dataset.tools ? card.dataset.tools.split(',').map(t => t.trim()) : [];
+        if (videoSrc) {
+            openLightbox(0, [{ src: videoSrc, title: videoTitle }], videoTitle, videoTools);
+        }
+    });
 });
 
 // Contact Form with Formspree
@@ -484,6 +583,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(el => {
         observer.observe(el);
     });
+
+    setTimeout(handleScroll, 100);
 });
 
 // Back to top

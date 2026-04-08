@@ -43,10 +43,14 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="Elements/Video/Hyperlapse.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <p class="subtitle gradient-text">Graphic Designer | Photographer | Photo Editor | Generative AI Specialist</p>
+                    <p class="subtitle gradient-text">Graphic Designer | Video Editor | Photographer | Photo Editor | Generative AI Specialist</p>
                     <h1>Hi, I'm <span class="gradient-text">Billy Joe Cruzada</span></h1>
                     <div class="bio-wrapper">
                         <p class="bio" id="heroBio">Creative professional with 5+ years of experience specializing in brand identity, digital design, and creative direction. Passionate about transforming ideas into compelling visual stories.</p>
@@ -103,6 +107,42 @@
             </div>
             <div class="showcases-grid" id="showcasesGrid">
                 <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Grading Projects Section -->
+    <section class="video-edits" id="videoEdits">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Video Editing</p>
+                <h2 class="section-title">Color Grading Projects</h2>
+            </div>
+            <div class="video-grid">
+                <div class="video-card reveal" data-video="Elements/Video/Colorgrading/Color grading process 001.mov" data-title="Color Grading Process 001" data-tools="DaVinci Resolve">
+                    <video preload="metadata" poster="Elements/Video/Colorgrading/Thumbnail for - Color grading process 001.PNG">
+                        <source src="Elements/Video/Colorgrading/Color grading process 001.mov" type="video/quicktime">
+                    </video>
+                    <div class="video-overlay">
+                        <button class="play-btn" aria-label="Play video">▶</button>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Color Grading Process 001</div>
+                        <div class="video-tools">DaVinci Resolve</div>
+                    </div>
+                </div>
+                <div class="video-card reveal" data-video="Elements/Video/Colorgrading/Day to night.mov" data-title="Day to Night" data-tools="DaVinci Resolve">
+                    <video preload="metadata" poster="Elements/Video/Colorgrading/Thumbnail for - Day to night.jpg">
+                        <source src="Elements/Video/Colorgrading/Day to night.mov" type="video/quicktime">
+                    </video>
+                    <div class="video-overlay">
+                        <button class="play-btn" aria-label="Play video">▶</button>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Day to Night</div>
+                        <div class="video-tools">DaVinci Resolve</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -309,6 +349,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
             </button>
             <img src="" alt="Gallery Image" id="lightboxImage" loading="lazy">
+            <video id="lightboxVideo" controls style="display: none;"></video>
             <button class="lightbox-nav lightbox-next" aria-label="Next">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>

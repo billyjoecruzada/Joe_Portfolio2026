@@ -109,6 +109,57 @@ const defaultData = {
             ]
         }
     ],
+    aiVideos: [
+        {
+            id: 1,
+            src: "Elements/AI videos - Higgsfield/AI-Seedance footage.mp4",
+            title: "AI Seedance Motion",
+            tool: "Seedance",
+            ratio: "horizontal"
+        },
+        {
+            id: 2,
+            src: "Elements/AI videos - Higgsfield/hf_20260605_114930_7583322b-8f04-4e59-b108-d6bebaf1419a.mp4",
+            title: "Higgsfield AI 001",
+            tool: "Higgsfield",
+            ratio: "vertical"
+        },
+        {
+            id: 3,
+            src: "Elements/AI videos - Higgsfield/hf_20260605_120624_5e56f7f8-97dd-4f25-957e-01bd78da919d.mp4",
+            title: "Higgsfield AI 002",
+            tool: "Higgsfield",
+            ratio: "vertical"
+        },
+        {
+            id: 4,
+            src: "Elements/AI videos - Higgsfield/hf_20260606_104322_abf631e7-9aac-493b-9d22-920cb3913057.mp4",
+            title: "Higgsfield AI 003",
+            tool: "Higgsfield",
+            ratio: "vertical"
+        },
+        {
+            id: 5,
+            src: "Elements/AI videos - Higgsfield/YTS_001.mp4",
+            title: "YTS 001",
+            tool: "Higgsfield",
+            ratio: "vertical"
+        },
+        {
+            id: 6,
+            src: "Elements/AI videos - Higgsfield/YTS-002.mp4",
+            title: "YTS 002",
+            tool: "Higgsfield",
+            ratio: "vertical"
+        },
+        {
+            id: 7,
+            src: "Elements/AI videos - Higgsfield/YTS-007.mp4",
+            title: "YTS 007",
+            tool: "Higgsfield",
+            ratio: "vertical"
+        }
+    ],
     services: [
         { title: "Brand Identity & Visual Design", description: "Creating memorable brand identities including logos, typography systems, color palettes, and comprehensive brand guidelines. I help businesses establish a cohesive visual presence that resonates with their target audience." },
         { title: "Photography & Photo Editing", description: "Professional photography services and expert retouching. From product shots to portraits, I capture moments and transform them into stunning visual content that tells your story." },
@@ -127,19 +178,19 @@ const defaultData = {
 function loadData() {
     const savedProfile = localStorage.getItem('portfolio_profile');
     const savedSocial = localStorage.getItem('portfolio_social');
-    const savedFeatured = localStorage.getItem('portfolio_featured');
-    const savedGallery = localStorage.getItem('portfolio_gallery');
-    const savedShowcases = localStorage.getItem('portfolio_showcases');
     const savedServices = localStorage.getItem('portfolio_services');
+    const savedAIVideos = localStorage.getItem('portfolio_aiVideos');
     const savedAbout = localStorage.getItem('portfolio_about');
 
+    // featured, gallery, and showcases use only defaults to avoid localStorage corruption
     return {
         profile: savedProfile ? JSON.parse(savedProfile) : defaultData.profile,
         social: savedSocial ? JSON.parse(savedSocial) : defaultData.social,
-        featured: savedFeatured ? JSON.parse(savedFeatured) : defaultData.featured,
-        gallery: savedGallery ? JSON.parse(savedGallery) : defaultData.gallery,
-        showcases: savedShowcases ? JSON.parse(savedShowcases) : defaultData.showcases,
+        featured: defaultData.featured,
+        gallery: defaultData.gallery,
+        showcases: defaultData.showcases,
         services: savedServices ? JSON.parse(savedServices) : defaultData.services,
+        aiVideos: savedAIVideos ? JSON.parse(savedAIVideos) : defaultData.aiVideos,
         about: savedAbout ? JSON.parse(savedAbout) : defaultData.about
     };
 }
@@ -291,6 +342,72 @@ function renderServices() {
             <p>${service.description.replace(/\n/g, '<br>')}</p>
         </div>
     `).join('');
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+function renderAIVideos() {
+    const aiVideoGrid = document.getElementById('aiVideoGrid');
+    if (!aiVideoGrid) return;
+
+    aiVideoGrid.innerHTML = data.aiVideos.map((video, index) => `
+        <div class="ai-video-card ${video.ratio} reveal reveal-delay-${(index % 3) + 1}" 
+             data-video="${video.src}" 
+             data-title="${video.title}" 
+             data-tools="${video.tool}">
+            <video preload="metadata" muted loop playsinline>
+                <source src="${video.src}" type="video/mp4">
+            </video>
+            <div class="video-overlay">
+                <button class="play-btn" aria-label="Play video">▶</button>
+            </div>
+            <div class="video-info">
+                <div class="video-title">${video.title}</div>
+                <div class="video-tools">${video.tool}</div>
+            </div>
+        </div>
+    `).join('');
+
+    // Show first frame as thumbnail
+    aiVideoGrid.querySelectorAll('video').forEach(v => {
+        v.addEventListener('loadedmetadata', function() {
+            this.currentTime = 0.01;
+        });
+        v.addEventListener('seeked', function() {
+            this.pause();
+        }, { once: true });
+    });
+
+    // Hover: play video from start
+    aiVideoGrid.querySelectorAll('.ai-video-card').forEach(card => {
+        const video = card.querySelector('video');
+
+        card.addEventListener('mouseenter', () => {
+            if (video) {
+                video.currentTime = 0;
+                video.play().catch(() => {});
+            }
+        });
+
+        card.addEventListener('mouseleave', () => {
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
+
+        // Click: open in lightbox
+        card.addEventListener('click', () => {
+            const videoSrc = card.dataset.video;
+            const videoTitle = card.dataset.title;
+            const videoTools = card.dataset.tools ? card.dataset.tools.split(',').map(t => t.trim()) : [];
+            if (videoSrc) {
+                openLightbox(0, [{ src: videoSrc, title: videoTitle }], videoTitle, videoTools);
+            }
+        });
+    });
 
     document.querySelectorAll('.reveal').forEach(el => {
         observer.observe(el);
@@ -576,6 +693,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderShowcases();
     renderGallery();
     renderServices();
+    renderAIVideos();
     initTextToggles();
 
     handleScroll();

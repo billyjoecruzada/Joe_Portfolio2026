@@ -233,7 +233,8 @@ document.querySelectorAll('[data-save]').forEach(btn => {
                 changes.push(`Location: ${location}`);
                 changes.push(`Bio visibility: ${bioVisible ? 'Shown' : 'Hidden'}`);
                 saveFunction = () => {
-                    const about = { quote, bio, location, bioVisible };
+                    const currentAbout = JSON.parse(localStorage.getItem('portfolio_about') || '{}');
+                    const about = { quote, bio, location, bioVisible, aboutImage: currentAbout.aboutImage || 'Joe portrait.webp' };
                     localStorage.setItem('portfolio_about', JSON.stringify(about));
                     showToast('About section saved!');
                 };
@@ -259,34 +260,6 @@ function loadAdminData() {
     const about = JSON.parse(localStorage.getItem('portfolio_about') || 'null') || getDefaultAbout();
     const experience = JSON.parse(localStorage.getItem('portfolio_experience') || 'null') || [];
 
-    // Populate Profile
-    document.getElementById('adminName').value = profile.name;
-    document.getElementById('adminTitle').value = profile.title;
-    document.getElementById('adminBio').value = profile.bio;
-    if (profile.image && profile.image !== 'Billy ID.jpg') {
-        document.getElementById('profilePreview').src = profile.image;
-        document.getElementById('profilePreview').style.display = 'block';
-    }
-
-    // Populate Social
-    document.getElementById('adminInstagram').value = social.instagram;
-    document.getElementById('adminLinkedin').value = social.linkedin;
-    document.getElementById('adminBehance').value = social.behance;
-    document.getElementById('adminEmail').value = social.email;
-
-    // Populate About
-    document.getElementById('adminAboutQuote').value = about.quote || '';
-    document.getElementById('adminAboutBio').value = about.bio || '';
-    document.getElementById('adminAboutLocation').value = about.location || '';
-    document.getElementById('adminAboutBioVisible').checked = about.bioVisible !== false;
-
-    // Render Galleries
-    renderFeaturedGallery(featured);
-    renderGalleryAdmin(gallery);
-    renderShowcasesAdmin(showcases);
-    renderServicesAdmin(services);
-    renderExperienceAdmin(experience);
-}
     // Populate Profile
     document.getElementById('adminName').value = profile.name;
     document.getElementById('adminTitle').value = profile.title;
@@ -348,21 +321,16 @@ function getDefaultFeatured() {
 
 function getDefaultGallery() {
     return [
-        { id: 1, src: 'Elements/Photography/Julia re processed 2.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 2, src: 'Elements/Photography/Julia re processed 5.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 3, src: 'Elements/Photography/Julia re processed 7.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 4, src: 'Elements/Photography/Julia re processed 11.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 5, src: 'Elements/Photography/1x1 format IG 2.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 6, src: 'Elements/Photography/1x1 format IG 4.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 7, src: 'Elements/Photography/1x1 format IG 7.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 8, src: 'Elements/Photography/1x1 format IG 9x.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 9, src: 'Elements/Photography/1x1 format IG 11.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 10, src: 'Elements/Photography/1x1 format IG 15.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 11, src: 'Elements/Photography/Food Samgy1-01.jpg', title: 'Food Photography', category: 'food' },
-        { id: 12, src: 'Elements/Photography/Food Samgy1-02.jpg', title: 'Food Photography', category: 'food' },
-        { id: 13, src: 'Elements/Photography/Malico --8.jpg', title: 'Street Photography', category: 'street' },
-        { id: 14, src: 'Elements/Photography/baag --6.jpg', title: 'Street Photography', category: 'street' },
-        { id: 15, src: 'Elements/Photography/2x3 format IG White BG - 3.jpg', title: 'Portrait', category: 'portrait' }
+        { id: 1, src: 'Elements/Photography/1x1 format IG 2.jpg', title: 'Portrait', category: 'portrait' },
+        { id: 2, src: 'Elements/Photography/1x1 format IG 4.jpg', title: 'Portrait', category: 'portrait' },
+        { id: 3, src: 'Elements/Photography/1x1 format IG 7.jpg', title: 'Portrait', category: 'portrait' },
+        { id: 4, src: 'Elements/Photography/1x1 format IG 11.jpg', title: 'Portrait', category: 'portrait' },
+        { id: 5, src: 'Elements/Photography/2x3 format IG White BG - 3.jpg', title: 'Portrait', category: 'portrait' },
+        { id: 6, src: 'Elements/Photography/Food Samgy1-01.jpg', title: 'Food Photography', category: 'food' },
+        { id: 7, src: 'Elements/Photography/Food Samgy1-02.jpg', title: 'Food Photography', category: 'food' },
+        { id: 8, src: 'Elements/Photography/DSCF6543.jpg', title: 'Portrait', category: 'portrait' },
+        { id: 9, src: 'Elements/Photography/baag --6.jpg', title: 'Portrait', category: 'portrait' },
+        { id: 10, src: 'Elements/Photography/Grad 2024.jpg', title: 'Portrait', category: 'portrait' }
     ];
 }
 
@@ -424,6 +392,7 @@ function getDefaultServices() {
 
 function getDefaultAbout() {
     return {
+        aboutImage: 'Joe portrait.webp',
         quote: 'Design is not just what it looks like. Design is how it works.',
         bio: 'Creative professional with 5+ years of experience...',
         location: 'Based on Tarlac, Philippines',

@@ -6,7 +6,9 @@
     <title>Billy Joe Cruzada | Graphic Designer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://formspree.io" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/jpeg" href="Billy ID.jpg">
 </head>
@@ -18,13 +20,13 @@
             <li><a href="#work" class="active">Work</a></li>
             <li><a href="#showcases">Showcases</a></li>
             <li><a href="#aiVideos">AI Videos</a></li>
+            <li><a href="#aiGirls">AI Models</a></li>
             <li><a href="#gallery">Moodboard</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li class="nav-dropdown">
                 <a href="#contact" class="nav-dropdown-btn">
                     Contact
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </a>
                 <div class="nav-dropdown-content">
                     <a href="https://www.instagram.com/ezii_yooow" target="_blank">Instagram</a>
@@ -43,7 +45,7 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <video class="hero-video" autoplay muted loop playsinline poster="Elements/Video/Fall-back-image_hyperlapse.jpg">
+        <video class="hero-video" autoplay muted loop playsinline poster="Elements/Video/Fall-back-image_hyperlapse.jpg" preload="metadata">
             <source src="Elements/Video/Hyperlapse.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -78,7 +80,7 @@
                 </div>
                 <div class="hero-image">
                     <div class="profile-image-wrapper">
-                        <img src="Billy ID.jpg" alt="Billy Joe Cruzada" id="heroProfileImage" loading="eager">
+                        <img src="Billy ID.jpg" alt="Billy Joe Cruzada" id="heroProfileImage" loading="eager" fetchpriority="high">
                     </div>
                 </div>
             </div>
@@ -160,12 +162,27 @@
         </div>
     </section>
 
+    <!-- AI Girl Models Section -->
+    <section class="gallery-section" id="aiGirls">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">AI Generated</p>
+                <h2 class="section-title">AI Girl Models</h2>
+                <p class="section-subtitle">Higgsfield | Nano Banana Pro | Seedream 4.5</p>
+            </div>
+            <div class="gallery-grid reveal" id="aiGirlsGrid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
     <!-- Gallery/Moodboard Section -->
     <section class="gallery-section" id="gallery">
         <div class="container">
             <div class="section-header reveal">
                 <p class="section-label">Gallery</p>
                 <h2 class="section-title">Gallery & Moodboard</h2>
+                <p class="section-subtitle">Photography Collections</p>
             </div>
             <div class="gallery-grid reveal" id="galleryGrid">
                 <!-- Populated by JavaScript -->
@@ -182,7 +199,7 @@
             </div>
             <div class="about-grid">
                 <div class="about-image reveal">
-                    <img src="Billy ID.jpg" alt="Billy Joe Cruzada" id="aboutProfileImage" loading="lazy">
+                    <img src="Joe portrait.webp" alt="Billy Joe Cruzada" id="aboutProfileImage" loading="lazy">
                 </div>
                 <div class="about-content reveal reveal-delay-1">
                     <p class="quote" id="aboutQuote">"Design is not just what it looks like. Design is how it works."</p>
@@ -372,6 +389,6 @@
         <div class="lightbox-tools" id="lightboxTools"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

@@ -22,32 +22,64 @@ const defaultData = {
         { id: 5, src: "Elements/Designs/Print Designs/Nmax ii color 1 variation.png", title: "Nmax Design", category: "Print" },
         { id: 6, src: "Elements/Designs/Shopify - Berrimora/Logo.png", title: "Berrimora Shopify", category: "Shopify" }
     ],
+    aiGirlModels: [
+        { id: 1, src: "Elements/AI girl models/hf_20260207_140808_57bef821-8724-40f2-9ab5-1adc3dc0b1d6.JPG", title: "AI Model 001", category: "higgsfield" },
+        { id: 2, src: "Elements/AI girl models/hf_20260207_141327_62d81650-99b0-4bcf-a60f-9c3e6c1769a7.JPG", title: "AI Model 002", category: "higgsfield" },
+        { id: 3, src: "Elements/AI girl models/hf_20260207_142137_c255d793-8599-426c-b412-0105b5836bd7.JPG", title: "AI Model 003", category: "higgsfield" },
+        { id: 4, src: "Elements/AI girl models/hf_20260523_090742_3d81af76-8d89-4223-aeef-09f932024543.JPG", title: "AI Model 004", category: "higgsfield" },
+        { id: 5, src: "Elements/AI girl models/hf_20260523_090849_8cdfd0a1-8022-4494-a2eb-4420fd776a61.JPG", title: "AI Model 005", category: "higgsfield" },
+        { id: 6, src: "Elements/AI girl models/hf_20260523_091708_1e64c3ef-86f8-40d1-bee7-9b5915e33490.JPG", title: "AI Model 006", category: "higgsfield" },
+        { id: 7, src: "Elements/AI girl models/hf_20260528_070301_44c989bc-0bb7-487c-97fc-d018002f653c.JPG", title: "AI Model 007", category: "higgsfield" },
+        { id: 8, src: "Elements/AI girl models/hf_20260528_070906_2a89543c-511e-4b9d-b4cf-ff62b7101c10.JPG", title: "AI Model 008", category: "higgsfield" },
+        { id: 9, src: "Elements/AI girl models/hf_20260528_071030_60d31156-752f-4f9a-9cd5-bb7ea199ae09.JPG", title: "AI Model 009", category: "higgsfield" },
+        { id: 10, src: "Elements/AI girl models/hf_20260530_172249_2473e0fd-f47e-4dd4-91e7-e06e8497964e.JPG", title: "AI Model 010", category: "higgsfield" },
+        { id: 11, src: "Elements/AI girl models/hf_20260530_173035_0dd56dfa-56f2-4594-93ae-db768ed652a8.JPG", title: "AI Model 011", category: "higgsfield" },
+        { id: 12, src: "Elements/AI girl models/seedream-i2i-1770723061247-0.JPG", title: "AI Model 012", category: "seedream" },
+        { id: 13, src: "Elements/AI girl models/seedream-i2i-1770723342004-2.JPG", title: "AI Model 013", category: "seedream" },
+        { id: 14, src: "Elements/AI girl models/seedream-i2i-1770723639744-0.JPG", title: "AI Model 014", category: "seedream" },
+        { id: 15, src: "Elements/AI girl models/seedream-i2i-1770724512254-2.JPG", title: "AI Model 015", category: "seedream" },
+        { id: 16, src: "Elements/AI girl models/seedream-i2i-1771074683603-1.JPG", title: "AI Model 016", category: "seedream" },
+        { id: 17, src: "Elements/AI girl models/seedream-i2i-1771075085491-0.JPG", title: "AI Model 017", category: "seedream" },
+        { id: 18, src: "Elements/AI girl models/seedream-i2i-1772190574716-1.JPG", title: "AI Model 018", category: "seedream" },
+        { id: 19, src: "Elements/AI girl models/seedream-i2i-1772190930910-1.JPG", title: "AI Model 019", category: "seedream" },
+        { id: 20, src: "Elements/AI girl models/seedream-i2i-1772191279662-1.JPG", title: "AI Model 020", category: "seedream" },
+        { id: 21, src: "Elements/AI girl models/seedream-i2i-1772192553755-1.JPG", title: "AI Model 021", category: "seedream" },
+        { id: 22, src: "Elements/AI girl models/seedream-i2i-1773822480542-1.JPG", title: "AI Model 022", category: "seedream" },
+        { id: 23, src: "Elements/AI girl models/seedream-i2i-1773822833538-1.JPG", title: "AI Model 023", category: "seedream" },
+        { id: 24, src: "Elements/AI girl models/seedream-i2i-1774002339447-2.JPG", title: "AI Model 024", category: "seedream" },
+        { id: 25, src: "Elements/AI girl models/seedream-i2i-1774002485283-1.JPG", title: "AI Model 025", category: "seedream" },
+        { id: 26, src: "Elements/AI girl models/seedream-i2i-1774002921298-0.JPG", title: "AI Model 026", category: "seedream" },
+        { id: 27, src: "Elements/AI girl models/seedream-i2i-1774003195561-0.JPG", title: "AI Model 027", category: "seedream" },
+        { id: 28, src: "Elements/AI girl models/seedream-i2i-cmlayjy8p003rlb04kugqrcqk.JPG", title: "AI Model 028", category: "seedream" },
+        { id: 29, src: "Elements/AI girl models/seedream-i2i-cmlayjz6r003tlb04vecib1qn.JPG", title: "AI Model 029", category: "seedream" }
+    ],
     gallery: [
         { id: 1, src: "Elements/Photography/1x1 format IG 2.jpg", title: "Portrait", category: "portrait" },
         { id: 2, src: "Elements/Photography/1x1 format IG 4.jpg", title: "Portrait", category: "portrait" },
         { id: 3, src: "Elements/Photography/1x1 format IG 7.jpg", title: "Portrait", category: "portrait" },
         { id: 4, src: "Elements/Photography/1x1 format IG 11.jpg", title: "Portrait", category: "portrait" },
-        { id: 5, src: "Elements/Photography/1x1 format IG 9x.jpg", title: "Portrait", category: "portrait" },
-        { id: 6, src: "Elements/Photography/1x1 format IG 15.jpg", title: "Portrait", category: "portrait" },
-        { id: 7, src: "Elements/Photography/2x3 format IG White BG - 3.jpg", title: "Portrait", category: "portrait" },
-        { id: 8, src: "Elements/Photography/2x3 format IG White BG - 4.jpg", title: "Portrait", category: "portrait" },
-        { id: 9, src: "Elements/Photography/2x3 format IG White BG - 6.jpg", title: "Portrait", category: "portrait" },
-        { id: 10, src: "Elements/Photography/baag --6.jpg", title: "Portrait", category: "portrait" },
-        { id: 11, src: "Elements/Photography/DSCF6543.jpg", title: "Portrait", category: "portrait" },
-        { id: 12, src: "Elements/Photography/DSCF6602.jpg", title: "Portrait", category: "portrait" },
-        { id: 13, src: "Elements/Photography/Food Samgy1-01.jpg", title: "Food Photography", category: "food" },
-        { id: 14, src: "Elements/Photography/Food Samgy1-02.jpg", title: "Food Photography", category: "food" },
-        { id: 15, src: "Elements/Photography/Grad 2024.jpg", title: "Portrait", category: "portrait" },
-        { id: 16, src: "Elements/Photography/Img-1.JPG", title: "Portrait", category: "portrait" },
-        { id: 17, src: "Elements/Photography/Img-2.JPG", title: "Portrait", category: "portrait" },
-        { id: 18, src: "Elements/Photography/Img-3.JPG", title: "Portrait", category: "portrait" },
-        { id: 19, src: "Elements/Photography/Imga-2.JPG", title: "Portrait", category: "portrait" },
-        { id: 20, src: "Elements/Photography/Imga-3.JPG", title: "Portrait", category: "portrait" },
-        { id: 21, src: "Elements/Photography/Julia 1st Process.jpg", title: "Portrait", category: "portrait" },
-        { id: 22, src: "Elements/Photography/Julia 1st Process-5.jpg", title: "Portrait", category: "portrait" },
-        { id: 23, src: "Elements/Photography/Julia 1st Process-7.jpg", title: "Portrait", category: "portrait" },
-        { id: 24, src: "Elements/Photography/Julia 1st Process-11.jpg", title: "Portrait", category: "portrait" },
-        { id: 25, src: "Elements/Photography/KRV DSCF6221-Enhanced-NR.jpg", title: "Portrait", category: "portrait" }
+        { id: 5, src: "Elements/Photography/2x3 format IG White BG - 3.jpg", title: "Portrait", category: "portrait" },
+        { id: 6, src: "Elements/Photography/2x3 format IG White BG - 4.jpg", title: "Portrait", category: "portrait" },
+        { id: 7, src: "Elements/Photography/2x3 format IG White BG - 6.jpg", title: "Portrait", category: "portrait" },
+        { id: 8, src: "Elements/Photography/baag --6.jpg", title: "Portrait", category: "portrait" },
+        { id: 9, src: "Elements/Photography/DSCF6543.jpg", title: "Portrait", category: "portrait" },
+        { id: 10, src: "Elements/Photography/DSCF6602.jpg", title: "Portrait", category: "portrait" },
+        { id: 11, src: "Elements/Photography/Food Samgy1-01.jpg", title: "Food Photography", category: "food" },
+        { id: 12, src: "Elements/Photography/Food Samgy1-02.jpg", title: "Food Photography", category: "food" },
+        { id: 13, src: "Elements/Photography/Grad 2024.jpg", title: "Portrait", category: "portrait" },
+        { id: 14, src: "Elements/Photography/Imag-1.JPG", title: "Portrait", category: "portrait" },
+        { id: 15, src: "Elements/Photography/Imag-2.JPG", title: "Portrait", category: "portrait" },
+        { id: 16, src: "Elements/Photography/Imag-4.JPG", title: "Portrait", category: "portrait" },
+        { id: 17, src: "Elements/Photography/Img-1.JPG", title: "Portrait", category: "portrait" },
+        { id: 18, src: "Elements/Photography/Img-2.JPG", title: "Portrait", category: "portrait" },
+        { id: 19, src: "Elements/Photography/Img-3.JPG", title: "Portrait", category: "portrait" },
+        { id: 20, src: "Elements/Photography/Imga-2.JPG", title: "Portrait", category: "portrait" },
+        { id: 21, src: "Elements/Photography/Imga-3.JPG", title: "Portrait", category: "portrait" },
+        { id: 22, src: "Elements/Photography/Julia 1st Process.jpg", title: "Portrait", category: "portrait" },
+        { id: 23, src: "Elements/Photography/Julia 1st Process-5.jpg", title: "Portrait", category: "portrait" },
+        { id: 24, src: "Elements/Photography/Julia 1st Process-7.jpg", title: "Portrait", category: "portrait" },
+        { id: 25, src: "Elements/Photography/Julia 1st Process-11.jpg", title: "Portrait", category: "portrait" },
+        { id: 26, src: "Elements/Photography/KRV DSCF6221-Enhanced-NR.jpg", title: "Portrait", category: "portrait" }
     ],
     showcases: [
         {
@@ -167,6 +199,7 @@ const defaultData = {
         { title: "Generative AI Content Creation", description: "Cutting-edge AI-generated imagery and content using state-of-the-art tools. Specializing in creative AI workflows for marketing, product visualization, and unique artistic expressions." }
     ],
     about: {
+        aboutImage: "Joe portrait.webp",
         quote: "\"Design is not just what it looks like. Design is how it works.\"",
         bio: "I'm Billy Joe Cruzada, a passionate graphic designer and visual storyteller based in Tarlac, Philippines. With over 5 years of experience in the creative industry, I specialize in transforming ideas into compelling visual experiences.\n\nMy journey began with a fascination for how design can evoke emotions and communicate messages without words. Today, I work with brands and individuals to create visual solutions that not only look stunning but also deliver results.\n\nI believe every project is an opportunity to tell a unique story. Whether it's a brand identity that captures a company's essence, a photograph that freezes a perfect moment, or AI-generated artwork that pushes creative boundaries, I approach each challenge with dedication and creativity.\n\nWhen I'm not designing, you'll find me exploring new creative tools, experimenting with AI art, or capturing the world through my lens.",
         location: "Tarlac City, Philippines",
@@ -187,6 +220,7 @@ function loadData() {
         profile: savedProfile ? JSON.parse(savedProfile) : defaultData.profile,
         social: savedSocial ? JSON.parse(savedSocial) : defaultData.social,
         featured: defaultData.featured,
+        aiGirlModels: defaultData.aiGirlModels,
         gallery: defaultData.gallery,
         showcases: defaultData.showcases,
         services: savedServices ? JSON.parse(savedServices) : defaultData.services,
@@ -202,6 +236,7 @@ function getRandomGallery(pool) {
 }
 
 let currentGallery = [];
+let currentAIGirls = [];
 
 // DOM Elements
 const heroProfileImage = document.getElementById('heroProfileImage');
@@ -211,6 +246,7 @@ const aboutQuote = document.getElementById('aboutQuote');
 const aboutBio = document.getElementById('aboutBio');
 const aboutLocation = document.getElementById('aboutLocation');
 const featuredGrid = document.getElementById('featuredGrid');
+const aiGirlsGrid = document.getElementById('aiGirlsGrid');
 const galleryGrid = document.getElementById('galleryGrid');
 const servicesGrid = document.getElementById('servicesGrid');
 const showcasesGrid = document.getElementById('showcasesGrid');
@@ -229,9 +265,8 @@ const sections = document.querySelectorAll('section');
 
 // Render Functions
 function renderProfile() {
-    heroProfileImage.src = data.profile.image;
     heroBio.textContent = data.profile.bio;
-    aboutProfileImage.src = data.profile.image;
+    if (data.about.aboutImage) aboutProfileImage.src = data.about.aboutImage;
     if (data.about.quote) aboutQuote.textContent = data.about.quote;
     if (data.about.bio) aboutBio.innerHTML = data.about.bio.replace(/\n/g, '<br>');
     if (data.about.location) aboutLocation.textContent = data.about.location;
@@ -260,7 +295,7 @@ function renderSocial() {
 function renderFeatured() {
     featuredGrid.innerHTML = data.featured.map((item, index) => `
         <div class="project-card reveal reveal-delay-${(index % 5) + 1}" data-index="${index}">
-            <img src="${item.src}" alt="${item.title}">
+            <img src="${item.src}" alt="${item.title}" loading="lazy">
             <div class="overlay">
                 <h3>${item.title}</h3>
                 <span class="category">${item.category}</span>
@@ -268,9 +303,6 @@ function renderFeatured() {
         </div>
     `).join('');
 
-    document.querySelectorAll('.reveal').forEach(el => {
-        observer.observe(el);
-    });
 }
 
 function renderShowcases() {
@@ -280,8 +312,6 @@ function renderShowcases() {
         showcasesGrid.innerHTML = '<p style="color: var(--text-secondary); text-align: center; grid-column: 1/-1;">No showcases available.</p>';
         return;
     }
-
-    const isVideoFile = (src) => /\.(mov|mp4|webm)$/i.test(src);
     
     showcasesGrid.innerHTML = visibleShowcases.map((showcase, index) => {
         const previewImages = showcase.images
@@ -297,7 +327,7 @@ function renderShowcases() {
                 <div class="showcase-preview" style="position: relative;">
                     <div class="${gridClass}">
                         ${previewImages.map((img, i) => `
-                            <img src="${img}" alt="${showcase.title}" class="preview-img" data-img-index="${i}">
+                            <img src="${img}" alt="${showcase.title}" class="preview-img" data-img-index="${i}" loading="lazy" decoding="async">
                         `).join('')}
                     </div>
                 </div>
@@ -310,24 +340,154 @@ function renderShowcases() {
         `;
     }).join('');
 
-    document.querySelectorAll('.reveal').forEach(el => {
-        observer.observe(el);
-    });
 }
 
 function renderGallery() {
     const shuffledGallery = getRandomGallery(data.gallery);
     currentGallery = shuffledGallery;
+    const initialCount = 8;
+    const teaserCount = 4;
+    const totalVisible = initialCount + teaserCount;
+    const hasMore = shuffledGallery.length > totalVisible;
 
-    galleryGrid.innerHTML = shuffledGallery.map((item, index) => `
+    galleryGrid.innerHTML = shuffledGallery.slice(0, initialCount).map((item, index) => `
         <div class="gallery-item reveal reveal-delay-${(index % 4) + 1}" data-index="${index}">
-            <img src="${item.src}" alt="${item.title}">
+            <img src="${item.src}" alt="${item.title}" loading="lazy" decoding="async">
         </div>
     `).join('');
 
-    document.querySelectorAll('.reveal').forEach(el => {
-        observer.observe(el);
-    });
+    const existingTeasers = galleryGrid.parentNode.querySelector('.gallery-teasers');
+    if (existingTeasers) existingTeasers.remove();
+
+    const existingWrapper = galleryGrid.parentNode.querySelector('.gallery-show-more');
+    if (existingWrapper) existingWrapper.remove();
+
+    if (hasMore) {
+        const teaserContainer = document.createElement('div');
+        teaserContainer.className = 'gallery-teasers';
+
+        const teaserItems = shuffledGallery.slice(initialCount, totalVisible);
+        teaserContainer.innerHTML = teaserItems.map((item, i) => {
+            const idx = initialCount + i;
+            return `
+                <div class="gallery-item teaser" data-index="${idx}">
+                    <img src="${item.src}" alt="${item.title}" loading="lazy" decoding="async">
+                </div>
+            `;
+        }).join('');
+
+        galleryGrid.parentNode.insertBefore(teaserContainer, galleryGrid.nextSibling);
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'gallery-show-more';
+        wrapper.innerHTML = `
+            <button class="gallery-show-more-btn">
+                See more
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        `;
+        galleryGrid.parentNode.insertBefore(wrapper, teaserContainer.nextSibling);
+
+        wrapper.querySelector('.gallery-show-more-btn').addEventListener('click', () => {
+            const teaserEls = teaserContainer.querySelectorAll('.gallery-item');
+            teaserEls.forEach(el => {
+                el.classList.remove('teaser');
+                galleryGrid.appendChild(el);
+            });
+            teaserContainer.remove();
+
+            const remaining = shuffledGallery.slice(totalVisible);
+            remaining.forEach((item, i) => {
+                const idx = totalVisible + i;
+                const div = document.createElement('div');
+                div.className = 'gallery-item appear';
+                div.style.animationDelay = `${i * 0.08}s`;
+                div.dataset.index = idx;
+                const img = document.createElement('img');
+                img.src = item.src;
+                img.alt = item.title;
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                div.appendChild(img);
+                galleryGrid.appendChild(div);
+            });
+            wrapper.remove();
+        });
+    }
+}
+
+function renderAIGirlModels() {
+    const shuffledAIGirls = getRandomGallery(data.aiGirlModels);
+    currentAIGirls = shuffledAIGirls;
+    const initialCount = 8;
+    const teaserCount = 4;
+    const totalVisible = initialCount + teaserCount;
+    const hasMore = shuffledAIGirls.length > totalVisible;
+
+    aiGirlsGrid.innerHTML = shuffledAIGirls.slice(0, initialCount).map((item, index) => `
+        <div class="gallery-item reveal reveal-delay-${(index % 4) + 1}" data-index="${index}">
+            <img src="${item.src}" alt="${item.title}" loading="lazy" decoding="async">
+        </div>
+    `).join('');
+
+    const existingTeasers = document.querySelector('.gallery-teasers-ai');
+    if (existingTeasers) existingTeasers.remove();
+
+    const existingWrapper = document.querySelector('.gallery-show-more-ai');
+    if (existingWrapper) existingWrapper.remove();
+
+    if (hasMore) {
+        const teaserContainer = document.createElement('div');
+        teaserContainer.className = 'gallery-teasers gallery-teasers-ai';
+
+        const teaserItems = shuffledAIGirls.slice(initialCount, totalVisible);
+        teaserContainer.innerHTML = teaserItems.map((item, i) => {
+            const idx = initialCount + i;
+            return `
+                <div class="gallery-item teaser" data-index="${idx}">
+                    <img src="${item.src}" alt="${item.title}" loading="lazy" decoding="async">
+                </div>
+            `;
+        }).join('');
+
+        aiGirlsGrid.parentNode.insertBefore(teaserContainer, aiGirlsGrid.nextSibling);
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'gallery-show-more gallery-show-more-ai';
+        wrapper.innerHTML = `
+            <button class="gallery-show-more-btn">
+                Show more AI Generated Images
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        `;
+        aiGirlsGrid.parentNode.insertBefore(wrapper, teaserContainer.nextSibling);
+
+        wrapper.querySelector('.gallery-show-more-btn').addEventListener('click', () => {
+            const teaserEls = teaserContainer.querySelectorAll('.gallery-item');
+            teaserEls.forEach(el => {
+                el.classList.remove('teaser');
+                aiGirlsGrid.appendChild(el);
+            });
+            teaserContainer.remove();
+
+            const remaining = shuffledAIGirls.slice(totalVisible);
+            remaining.forEach((item, i) => {
+                const idx = totalVisible + i;
+                const div = document.createElement('div');
+                div.className = 'gallery-item appear';
+                div.style.animationDelay = `${i * 0.08}s`;
+                div.dataset.index = idx;
+                const img = document.createElement('img');
+                img.src = item.src;
+                img.alt = item.title;
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                div.appendChild(img);
+                aiGirlsGrid.appendChild(div);
+            });
+            wrapper.remove();
+        });
+    }
 }
 
 function renderServices() {
@@ -343,9 +503,6 @@ function renderServices() {
         </div>
     `).join('');
 
-    document.querySelectorAll('.reveal').forEach(el => {
-        observer.observe(el);
-    });
 }
 
 function renderAIVideos() {
@@ -354,6 +511,7 @@ function renderAIVideos() {
 
     aiVideoGrid.innerHTML = data.aiVideos.map((video, index) => `
         <div class="ai-video-card ${video.ratio} reveal reveal-delay-${(index % 3) + 1}" 
+             data-index="${index}"
              data-video="${video.src}" 
              data-title="${video.title}" 
              data-tools="${video.tool}">
@@ -400,30 +558,19 @@ function renderAIVideos() {
 
         // Click: open in lightbox
         card.addEventListener('click', () => {
-            const videoSrc = card.dataset.video;
-            const videoTitle = card.dataset.title;
-            const videoTools = card.dataset.tools ? card.dataset.tools.split(',').map(t => t.trim()) : [];
-            if (videoSrc) {
-                openLightbox(0, [{ src: videoSrc, title: videoTitle }], videoTitle, videoTools);
+            const index = parseInt(card.dataset.index);
+            if (data.aiVideos[index]) {
+                openLightbox(index, data.aiVideos, data.aiVideos[index].title, [data.aiVideos[index].tool]);
             }
         });
     });
 
-    document.querySelectorAll('.reveal').forEach(el => {
-        observer.observe(el);
-    });
 }
 
 // Navigation
 function handleScroll() {
     if (!nav || !sections.length) return;
     
-    if (window.scrollY > 100) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 150;
@@ -440,11 +587,18 @@ function handleScroll() {
     });
 }
 
-window.addEventListener('scroll', handleScroll);
+let ticking = false;
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            handleScroll();
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
 window.addEventListener('load', () => {
     handleScroll();
-    setTimeout(handleScroll, 100);
-    setTimeout(handleScroll, 500);
 });
 
 // Mobile Menu
@@ -505,9 +659,9 @@ function closeLightbox() {
     document.body.style.overflow = '';
 }
 
-function nextImage() {
-    currentGalleryIndex = (currentGalleryIndex + 1) % currentGallery.length;
-    const currentSrc = currentGallery[currentGalleryIndex].src || currentGallery[currentGalleryIndex];
+function updateLightboxContent() {
+    const currentItem = currentGallery[currentGalleryIndex];
+    const currentSrc = currentItem.src || currentItem;
     
     if (isVideoFile(currentSrc)) {
         lightboxImage.style.display = 'none';
@@ -521,24 +675,28 @@ function nextImage() {
         lightboxImage.src = currentSrc;
     }
     lightboxCounter.textContent = `${currentGalleryIndex + 1} / ${currentGallery.length}`;
+    
+    if (currentItem.title) {
+        lightboxTitle.textContent = currentItem.title;
+    }
+    
+    const itemTools = currentItem.tools || (currentItem.tool ? [currentItem.tool] : []);
+    if (itemTools.length > 0) {
+        lightboxTools.innerHTML = itemTools.map(t => `<span class="lightbox-tool-badge">${t}</span>`).join('');
+        lightboxTools.style.display = 'flex';
+    } else {
+        lightboxTools.style.display = 'none';
+    }
+}
+
+function nextImage() {
+    currentGalleryIndex = (currentGalleryIndex + 1) % currentGallery.length;
+    updateLightboxContent();
 }
 
 function prevImage() {
     currentGalleryIndex = (currentGalleryIndex - 1 + currentGallery.length) % currentGallery.length;
-    const currentSrc = currentGallery[currentGalleryIndex].src || currentGallery[currentGalleryIndex];
-    
-    if (isVideoFile(currentSrc)) {
-        lightboxImage.style.display = 'none';
-        lightboxVideo.style.display = 'block';
-        lightboxVideo.src = currentSrc;
-        lightboxVideo.play();
-    } else {
-        lightboxVideo.style.display = 'none';
-        lightboxVideo.pause();
-        lightboxImage.style.display = 'block';
-        lightboxImage.src = currentSrc;
-    }
-    lightboxCounter.textContent = `${currentGalleryIndex + 1} / ${currentGallery.length}`;
+    updateLightboxContent();
 }
 
 document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
@@ -553,6 +711,15 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowRight') nextImage();
     if (e.key === 'ArrowLeft') prevImage();
+});
+
+// AI Girl Models Item Click
+aiGirlsGrid.addEventListener('click', (e) => {
+    const item = e.target.closest('.gallery-item');
+    if (item) {
+        const index = parseInt(item.dataset.index);
+        openLightbox(index, currentAIGirls);
+    }
 });
 
 // Gallery Item Click
@@ -588,7 +755,7 @@ showcasesGrid.addEventListener('click', (e) => {
 });
 
 // Video Card Hover & Click
-document.querySelectorAll('.video-card').forEach(card => {
+document.querySelectorAll('.video-card').forEach((card, index) => {
     const video = card.querySelector('video');
     
     card.addEventListener('mouseenter', () => {
@@ -606,11 +773,14 @@ document.querySelectorAll('.video-card').forEach(card => {
     });
     
     card.addEventListener('click', () => {
-        const videoSrc = card.dataset.video;
-        const videoTitle = card.dataset.title;
-        const videoTools = card.dataset.tools ? card.dataset.tools.split(',').map(t => t.trim()) : [];
-        if (videoSrc) {
-            openLightbox(0, [{ src: videoSrc, title: videoTitle }], videoTitle, videoTools);
+        const cards = document.querySelectorAll('.video-card');
+        const allData = Array.from(cards).map(c => ({
+            src: c.dataset.video,
+            title: c.dataset.title,
+            tools: c.dataset.tools ? c.dataset.tools.split(',').map(t => t.trim()) : []
+        }));
+        if (allData[index] && allData[index].src) {
+            openLightbox(index, allData, allData[index].title, allData[index].tools);
         }
     });
 });
@@ -691,6 +861,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSocial();
     renderFeatured();
     renderShowcases();
+    renderAIGirlModels();
     renderGallery();
     renderServices();
     renderAIVideos();

@@ -321,15 +321,15 @@ function getDefaultFeatured() {
 
 function getDefaultGallery() {
     return [
-        { id: 1, src: 'Elements/Photography/1x1 format IG 2.jpg', title: 'Portrait', category: 'portrait' },
+        { id: 1, src: 'Elements/Photography/1x1 format IG 2 copy.webp', title: 'Portrait', category: 'portrait' },
         { id: 2, src: 'Elements/Photography/1x1 format IG 4.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 3, src: 'Elements/Photography/1x1 format IG 7.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 4, src: 'Elements/Photography/1x1 format IG 11.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 5, src: 'Elements/Photography/2x3 format IG White BG - 3.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 6, src: 'Elements/Photography/Food Samgy1-01.jpg', title: 'Food Photography', category: 'food' },
-        { id: 7, src: 'Elements/Photography/Food Samgy1-02.jpg', title: 'Food Photography', category: 'food' },
+        { id: 3, src: 'Elements/Photography/1x1 format IG 7 copy.webp', title: 'Portrait', category: 'portrait' },
+        { id: 4, src: 'Elements/Photography/1x1 format IG 11 copy.webp', title: 'Portrait', category: 'portrait' },
+        { id: 5, src: 'Elements/Photography/2x3 format IG White BG - 3 copy.webp', title: 'Portrait', category: 'portrait' },
+        { id: 6, src: 'Elements/Photography/Food Samgy1-01 copy.webp', title: 'Food Photography', category: 'food' },
+        { id: 7, src: 'Elements/Photography/Food Samgy1-02 copy.webp', title: 'Food Photography', category: 'food' },
         { id: 8, src: 'Elements/Photography/DSCF6543.jpg', title: 'Portrait', category: 'portrait' },
-        { id: 9, src: 'Elements/Photography/baag --6.jpg', title: 'Portrait', category: 'portrait' },
+        { id: 9, src: 'Elements/Photography/baag --6 copy.webp', title: 'Portrait', category: 'portrait' },
         { id: 10, src: 'Elements/Photography/Grad 2024.jpg', title: 'Portrait', category: 'portrait' }
     ];
 }
@@ -376,6 +376,19 @@ function getDefaultShowcases() {
                 'Elements/Designs/Print Designs/Nmax mock up.jpg',
                 'Elements/Designs/Print Designs/Shirt mockup.jpg',
                 'Elements/Designs/Print Designs/Shirt mockup 2.jpg'
+            ]
+        },
+        {
+            id: 4,
+            title: 'Avory',
+            category: 'AI UGC Ad',
+            tools: ['Higgsfield', 'Premiere Pro', 'Lightroom'],
+            visible: true,
+            images: [
+                'Elements/Designs/Avory/hf_20260802_180235_f41097bd-12bc-495c-bf04-5cf75a282a36.png',
+                'Elements/AI videos - Higgsfield/Avory - AI UGC Ad.mp4',
+                'Elements/Designs/Avory/Avory - AI UGC Ad - 002.mp4',
+                'Elements/Designs/Avory/hf_20260802_181707_09bd931a-dff0-4b6b-bb6e-ab4d0de9bc82.mp4'
             ]
         }
     ];

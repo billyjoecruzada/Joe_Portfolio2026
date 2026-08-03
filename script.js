@@ -53,32 +53,33 @@ const defaultData = {
         { id: 28, src: "Elements/AI girl models/d29b04d8-6651-11f1-af83-c1af0e67a990.png", title: "AI Model 028", category: "nanoBanana" }
     ],
     gallery: [
-        { id: 1, src: "Elements/Photography/1x1 format IG 2.jpg", title: "Portrait", category: "portrait" },
+        { id: 1, src: "Elements/Photography/1x1 format IG 2 copy.webp", title: "Portrait", category: "portrait" },
         { id: 2, src: "Elements/Photography/1x1 format IG 4.jpg", title: "Portrait", category: "portrait" },
-        { id: 3, src: "Elements/Photography/1x1 format IG 7.jpg", title: "Portrait", category: "portrait" },
-        { id: 4, src: "Elements/Photography/1x1 format IG 11.jpg", title: "Portrait", category: "portrait" },
-        { id: 5, src: "Elements/Photography/2x3 format IG White BG - 3.jpg", title: "Portrait", category: "portrait" },
-        { id: 6, src: "Elements/Photography/2x3 format IG White BG - 4.jpg", title: "Portrait", category: "portrait" },
-        { id: 7, src: "Elements/Photography/2x3 format IG White BG - 6.jpg", title: "Portrait", category: "portrait" },
-        { id: 8, src: "Elements/Photography/baag --6.jpg", title: "Portrait", category: "portrait" },
-        { id: 9, src: "Elements/Photography/DSCF6543.jpg", title: "Portrait", category: "portrait" },
-        { id: 10, src: "Elements/Photography/DSCF6602.jpg", title: "Portrait", category: "portrait" },
-        { id: 11, src: "Elements/Photography/Food Samgy1-01.jpg", title: "Food Photography", category: "food" },
-        { id: 12, src: "Elements/Photography/Food Samgy1-02.jpg", title: "Food Photography", category: "food" },
-        { id: 13, src: "Elements/Photography/Grad 2024.jpg", title: "Portrait", category: "portrait" },
-        { id: 14, src: "Elements/Photography/Imag-1.JPG", title: "Portrait", category: "portrait" },
-        { id: 15, src: "Elements/Photography/Imag-2.JPG", title: "Portrait", category: "portrait" },
-        { id: 16, src: "Elements/Photography/Imag-4.JPG", title: "Portrait", category: "portrait" },
-        { id: 17, src: "Elements/Photography/Img-1.JPG", title: "Portrait", category: "portrait" },
-        { id: 18, src: "Elements/Photography/Img-2.JPG", title: "Portrait", category: "portrait" },
-        { id: 19, src: "Elements/Photography/Img-3.JPG", title: "Portrait", category: "portrait" },
-        { id: 20, src: "Elements/Photography/Imga-2.JPG", title: "Portrait", category: "portrait" },
-        { id: 21, src: "Elements/Photography/Imga-3.JPG", title: "Portrait", category: "portrait" },
-        { id: 22, src: "Elements/Photography/Julia 1st Process.jpg", title: "Portrait", category: "portrait" },
-        { id: 23, src: "Elements/Photography/Julia 1st Process-5.jpg", title: "Portrait", category: "portrait" },
-        { id: 24, src: "Elements/Photography/Julia 1st Process-7.jpg", title: "Portrait", category: "portrait" },
-        { id: 25, src: "Elements/Photography/Julia 1st Process-11.jpg", title: "Portrait", category: "portrait" },
-        { id: 26, src: "Elements/Photography/KRV DSCF6221-Enhanced-NR.jpg", title: "Portrait", category: "portrait" }
+        { id: 3, src: "Elements/Photography/1x1 format IG 7 copy.webp", title: "Portrait", category: "portrait" },
+        { id: 4, src: "Elements/Photography/1x1 format IG 11 copy.webp", title: "Portrait", category: "portrait" },
+        { id: 5, src: "Elements/Photography/2x3 format IG White BG - 3 copy.webp", title: "Portrait", category: "portrait" },
+        { id: 6, src: "Elements/Photography/2x3 format IG White BG - 6 copy.webp", title: "Portrait", category: "portrait" },
+        { id: 7, src: "Elements/Photography/baag --6 copy.webp", title: "Portrait", category: "portrait" },
+        { id: 8, src: "Elements/Photography/DSCF6543.jpg", title: "Portrait", category: "portrait" },
+        { id: 9, src: "Elements/Photography/DSCF6602.jpg", title: "Portrait", category: "portrait" },
+        { id: 10, src: "Elements/Photography/Food Samgy1-01 copy.webp", title: "Food Photography", category: "food" },
+        { id: 11, src: "Elements/Photography/Food Samgy1-02 copy.webp", title: "Food Photography", category: "food" },
+        { id: 12, src: "Elements/Photography/Grad 2024.jpg", title: "Portrait", category: "portrait" },
+        { id: 13, src: "Elements/Photography/Imag-1.jpg", title: "Portrait", category: "portrait" },
+        { id: 14, src: "Elements/Photography/Imag-2.jpg", title: "Portrait", category: "portrait" },
+        { id: 15, src: "Elements/Photography/Imag-4 copy.webp", title: "Portrait", category: "portrait" },
+        { id: 16, src: "Elements/Photography/Img-1.jpg", title: "Portrait", category: "portrait" },
+        { id: 17, src: "Elements/Photography/Img-2.jpg", title: "Portrait", category: "portrait" },
+        { id: 18, src: "Elements/Photography/Img-3.jpg", title: "Portrait", category: "portrait" },
+        { id: 19, src: "Elements/Photography/Imga-2.jpg", title: "Portrait", category: "portrait" },
+        { id: 20, src: "Elements/Photography/Imga-3 copy.webp", title: "Portrait", category: "portrait" },
+        { id: 21, src: "Elements/Photography/Julia 1st Process.jpg", title: "Portrait", category: "portrait" },
+        { id: 22, src: "Elements/Photography/Julia 1st Process-5.jpg", title: "Portrait", category: "portrait" },
+        { id: 23, src: "Elements/Photography/Julia 1st Process-7.jpg", title: "Portrait", category: "portrait" },
+        { id: 24, src: "Elements/Photography/Julia 1st Process-11.jpg", title: "Portrait", category: "portrait" },
+        { id: 25, src: "Elements/Photography/KRV DSCF6221-Enhanced-NR copy.webp", title: "Portrait", category: "portrait" },
+        { id: 26, src: "Elements/Photography/1x1 format IG 15 copy.webp", title: "Portrait", category: "portrait" },
+        { id: 27, src: "Elements/Photography/Malico --8.jpg", title: "Portrait", category: "portrait" }
     ],
     showcases: [
         {
@@ -138,53 +139,73 @@ const defaultData = {
                 "Elements/Designs/Shopify - Berrimora/Backdrop.jpg",
                 "Elements/Designs/Shopify - Berrimora/Mobile View.jpg"
             ]
+        },
+        {
+            id: 5,
+            title: "Avory",
+            category: "AI UGC Ad",
+            tools: ["Higgsfield", "Premiere Pro", "Lightroom"],
+            visible: true,
+            images: [
+                "Elements/Designs/Avory/hf_20260802_180235_f41097bd-12bc-495c-bf04-5cf75a282a36.png",
+                "Elements/AI videos - Higgsfield/Avory - AI UGC Ad.mp4",
+                "Elements/Designs/Avory/Avory - AI UGC Ad - 002.mp4",
+                "Elements/Designs/Avory/hf_20260802_181707_09bd931a-dff0-4b6b-bb6e-ab4d0de9bc82.mp4"
+            ]
         }
     ],
     aiVideos: [
         {
             id: 1,
             src: "Elements/AI videos - Higgsfield/AI-Seedance footage.mp4",
-            title: "AI Seedance Motion",
-            tool: "Seedance",
+            title: "Higgsfield AI Cinematic",
+            tool: "Seedance | Nano Banana Pro",
             ratio: "horizontal"
         },
         {
             id: 2,
+            src: "Elements/AI videos - Higgsfield/Avory - AI UGC Ad.mp4",
+            title: "Avory - AI UGC Ad",
+            tool: "Higgsfield | Premiere Pro",
+            ratio: "vertical"
+        },
+        {
+            id: 3,
             src: "Elements/AI videos - Higgsfield/hf_20260605_114930_7583322b-8f04-4e59-b108-d6bebaf1419a.mp4",
             title: "Higgsfield AI 001",
             tool: "Higgsfield",
             ratio: "vertical"
         },
         {
-            id: 3,
+            id: 4,
             src: "Elements/AI videos - Higgsfield/hf_20260605_120624_5e56f7f8-97dd-4f25-957e-01bd78da919d.mp4",
             title: "Higgsfield AI 002",
             tool: "Higgsfield",
             ratio: "vertical"
         },
         {
-            id: 4,
+            id: 5,
             src: "Elements/AI videos - Higgsfield/hf_20260606_104322_abf631e7-9aac-493b-9d22-920cb3913057.mp4",
             title: "Higgsfield AI 003",
             tool: "Higgsfield",
             ratio: "vertical"
         },
         {
-            id: 5,
+            id: 6,
             src: "Elements/AI videos - Higgsfield/YTS_001.mp4",
             title: "YTS 001",
             tool: "Higgsfield",
             ratio: "vertical"
         },
         {
-            id: 6,
+            id: 7,
             src: "Elements/AI videos - Higgsfield/YTS-002.mp4",
             title: "YTS 002",
             tool: "Higgsfield",
             ratio: "vertical"
         },
         {
-            id: 7,
+            id: 8,
             src: "Elements/AI videos - Higgsfield/YTS-007.mp4",
             title: "YTS 007",
             tool: "Higgsfield",
@@ -198,7 +219,7 @@ const defaultData = {
         { title: "Generative AI Content Creation", description: "Cutting-edge AI-generated imagery and content using state-of-the-art tools. Specializing in creative AI workflows for marketing, product visualization, and unique artistic expressions." }
     ],
     about: {
-        aboutImage: "Joe portrait.webp",
+        aboutImage: "Billy ID.jpg",
         quote: "\"Design is not just what it looks like. Design is how it works.\"",
         bio: "I'm Billy Joe Cruzada, a passionate graphic designer and visual storyteller based in Tarlac, Philippines. With over 5 years of experience in the creative industry, I specialize in transforming ideas into compelling visual experiences.\n\nMy journey began with a fascination for how design can evoke emotions and communicate messages without words. Today, I work with brands and individuals to create visual solutions that not only look stunning but also deliver results.\n\nI believe every project is an opportunity to tell a unique story. Whether it's a brand identity that captures a company's essence, a photograph that freezes a perfect moment, or AI-generated artwork that pushes creative boundaries, I approach each challenge with dedication and creativity.\n\nWhen I'm not designing, you'll find me exploring new creative tools, experimenting with AI art, or capturing the world through my lens.",
         location: "Tarlac City, Philippines",
@@ -313,10 +334,15 @@ function renderShowcases() {
     }
     
     showcasesGrid.innerHTML = visibleShowcases.map((showcase, index) => {
-        const previewImages = showcase.images
-            .filter(img => !isVideoFile(img))
-            .slice(0, 3);
-        const gridClass = previewImages.length >= 3 ? 'showcase-grid-2x2' : '';
+        const imageItems = showcase.images.filter(img => !isVideoFile(img));
+        const videoItems = showcase.images.filter(img => isVideoFile(img));
+        let previewItems;
+        if (imageItems.length >= 3) {
+            previewItems = imageItems.slice(0, 3);
+        } else {
+            previewItems = [...imageItems, ...videoItems].slice(0, 4);
+        }
+        const gridClass = previewItems.length === 4 ? 'showcase-grid-2x2 four' : (previewItems.length === 3 ? 'showcase-grid-2x2' : '');
         const toolsHtml = showcase.tools && showcase.tools.length > 0 
             ? `<div class="showcase-tools">${showcase.tools.map(t => `<span class="showcase-tool-badge">${t}</span>`).join('')}</div>` 
             : '';
@@ -325,8 +351,12 @@ function renderShowcases() {
             <div class="showcase-card reveal reveal-delay-${(index % 3) + 1}" data-index="${index}">
                 <div class="showcase-preview" style="position: relative;">
                     <div class="${gridClass}">
-                        ${previewImages.map((img, i) => `
-                            <img src="${img}" alt="${showcase.title}" class="preview-img" data-img-index="${i}" loading="lazy" decoding="async">
+                        ${previewItems.map((item, i) => isVideoFile(item) ? `
+                            <video class="preview-tile preview-video" data-img-index="${i}" muted loop playsinline preload="metadata">
+                                <source src="${item}" type="${/\.mov$/i.test(item) ? 'video/quicktime' : (/\.webm$/i.test(item) ? 'video/webm' : 'video/mp4')}">
+                            </video>
+                        ` : `
+                            <img src="${item}" alt="${showcase.title}" class="preview-tile preview-img" data-img-index="${i}" loading="lazy" decoding="async">
                         `).join('')}
                     </div>
                 </div>
@@ -338,6 +368,15 @@ function renderShowcases() {
             </div>
         `;
     }).join('');
+
+    showcasesGrid.querySelectorAll('.preview-video').forEach(v => {
+        v.addEventListener('loadedmetadata', function() {
+            this.currentTime = 0.01;
+        });
+        v.addEventListener('seeked', function() {
+            this.pause();
+        }, { once: true });
+    });
 
 }
 

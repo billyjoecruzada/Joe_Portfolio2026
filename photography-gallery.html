@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Gallery | Billy Joe Cruzada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/jpeg" href="Billy ID.jpg">
+</head>
+<body>
+    <script>window.PORTFOLIO_ACTIVE_NAV = 'photography';</script>
+
+    <!-- Floating Navigation Bar -->
+    <nav class="floating-nav">
+        <a href="index.html" class="nav-logo gradient-text">BJC</a>
+        <ul class="nav-links">
+            <li><a href="index.html#work" data-nav="home">Work</a></li>
+            <li><a href="index.html#showcases" data-nav="showcases">Showcases</a></li>
+            <li><a href="ai-videos.html" data-nav="ai-videos">AI Videos</a></li>
+            <li><a href="ai-avatars-gallery.html" data-nav="ai-avatars">AI Avatars</a></li>
+            <li><a href="index.html#gallery" data-nav="gallery">Moodboard</a></li>
+            <li><a href="index.html#about" data-nav="about">About</a></li>
+            <li><a href="index.html#services" data-nav="services">Services</a></li>
+            <li class="nav-dropdown">
+                <a href="index.html#contact" class="nav-dropdown-btn">Contact</a>
+                <div class="nav-dropdown-content">
+                    <a href="https://www.instagram.com/ezii_yooow" target="_blank">Instagram</a>
+                    <a href="https://linkedin.com/in/iam-billycruzada/" target="_blank">LinkedIn</a>
+                    <a href="https://behance.net/billyjoeCrzGraphx" target="_blank">Behance</a>
+                    <a href="mailto:billyjoecruzada12@gmail.com">Email Me</a>
+                </div>
+            </li>
+        </ul>
+        <button class="mobile-menu-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Photography Gallery -->
+    <section class="gallery-section page-top" id="photographyGallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Gallery &amp; Moodboard</p>
+                <h2 class="section-title">Photography Gallery</h2>
+                <p class="section-subtitle">Food &amp; Travel · Portrait · Sports · Street</p>
+            </div>
+            <div class="filter-pills" id="photoFilters">
+                <!-- Populated by JavaScript -->
+            </div>
+            <div class="gallery-grid" id="photoGalleryGrid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Billy Joe Cruzada. All rights reserved.</p>
+            <a href="index.html" class="back-to-top">
+                ← Back to Portfolio
+            </a>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close">&times;</button>
+            <button class="lightbox-nav lightbox-prev" aria-label="Previous">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <img src="" alt="Gallery Image" id="lightboxImage" loading="lazy">
+            <video id="lightboxVideo" controls style="display: none;"></video>
+            <button class="lightbox-nav lightbox-next" aria-label="Next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+        <div class="lightbox-tools" id="lightboxTools"></div>
+    </div>
+
+    <script src="data.js" defer></script>
+    <script src="lightbox.js" defer></script>
+    <script src="nav.js" defer></script>
+    <script src="photography-gallery-page.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+I want the before and after section to have a feature where when you actively click and hover the image. you can view the before and after edit of the images. Maybe create a new section with this. on the main page called edited photos samples included below the gallery and moodboard section. but do not add this on the nav bar.

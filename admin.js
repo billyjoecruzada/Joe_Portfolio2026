@@ -353,7 +353,7 @@ function getDefaultShowcases() {
             id: 2,
             title: 'Passiflora Perfume',
             category: 'Health & Wellness',
-            tools: ['Ai', 'Ps'],
+            tools: ['Higgsfield', 'Nano Banana Pro', 'Photoshop'],
             visible: true,
             images: [
                 'Elements/Designs/Health and Wellness/(1) Artboard 19@2x.png',

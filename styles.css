@@ -1466,6 +1466,11 @@ section {
     background: var(--bg-tertiary);
     border: 1px solid var(--bg-tertiary);
     transition: box-shadow var(--transition), border-color var(--transition);
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    cursor: ew-resize;
 }
 
 .before-after-widget:hover {
@@ -1482,6 +1487,9 @@ section {
     display: block;
     width: 100%;
     cursor: ew-resize;
+    pointer-events: auto;
+    -webkit-user-drag: none;
+    touch-action: none;
 }
 
 .ba-image-before {

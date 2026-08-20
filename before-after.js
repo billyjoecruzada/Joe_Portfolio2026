@@ -11,15 +11,15 @@ function setBeforeAfterPosition(widget, percent) {
 }
 
 function startBeforeAfterDrag(widget, clientX) {
-    const rect = widget.getBoundingClientRect();
-    setBeforeAfterPosition(widget, ((clientX - rect.left) / rect.width) * 100);
+    setBeforeAfterFromClientX(widget, clientX);
     widget.classList.add('dragging');
     const handle = widget.querySelector('.ba-handle');
     if (handle) handle.classList.add('dragging');
 }
 
-function moveBeforeAfterDrag(widget, clientX) {
+function setBeforeAfterFromClientX(widget, clientX) {
     const rect = widget.getBoundingClientRect();
+    if (!rect.width) return;
     setBeforeAfterPosition(widget, ((clientX - rect.left) / rect.width) * 100);
 }
 
@@ -54,30 +54,40 @@ function attachBeforeAfter(widget) {
         });
     }
 
-    // Drag-only interaction (mouse + touch).
+    // Drag-only interaction (mouse + touch) using Pointer Capture.
+    // Pointer capture keeps pointermove/pointerup flowing to the widget even
+    // when the cursor leaves it, and blocks native image-drag / scroll hijack.
+    let activePointerId = null;
+
     const onPointerDown = (e) => {
+        if (e.pointerType === 'mouse' && e.button !== 0) return; // left button only
         e.preventDefault();
+        activePointerId = e.pointerId;
         startBeforeAfterDrag(widget, e.clientX);
+        if (widget.setPointerCapture && widget.hasPointerCapture) {
+            try { widget.setPointerCapture(e.pointerId); } catch (err) {}
+        }
     };
 
     const onPointerMove = (e) => {
-        if (!widget.classList.contains('dragging')) return;
-        moveBeforeAfterDrag(widget, e.clientX);
+        if (e.pointerId !== activePointerId) return;
+        setBeforeAfterFromClientX(widget, e.clientX);
     };
 
-    const onPointerUp = () => {
+    const onPointerEnd = (e) => {
+        if (e.pointerId !== activePointerId && e.type !== 'lostpointercapture') return;
+        if (activePointerId !== null && widget.releasePointerCapture && widget.hasPointerCapture(activePointerId)) {
+            try { widget.releasePointerCapture(activePointerId); } catch (err) {}
+        }
+        activePointerId = null;
         endBeforeAfterDrag(widget);
-        document.removeEventListener('pointermove', onPointerMove);
-        document.removeEventListener('pointerup', onPointerUp);
-        document.removeEventListener('pointercancel', onPointerUp);
-        document.removeEventListener('mouseleave', onPointerUp);
     };
 
     widget.addEventListener('pointerdown', onPointerDown);
-    document.addEventListener('pointermove', onPointerMove);
-    document.addEventListener('pointerup', onPointerUp);
-    document.addEventListener('pointercancel', onPointerUp);
-    document.addEventListener('mouseleave', onPointerUp);
+    widget.addEventListener('pointermove', onPointerMove);
+    widget.addEventListener('pointerup', onPointerEnd);
+    widget.addEventListener('pointercancel', onPointerEnd);
+    widget.addEventListener('lostpointercapture', onPointerEnd);
 }
 
 function renderBeforeAfterSection(container, items) {

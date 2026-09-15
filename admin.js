@@ -390,6 +390,20 @@ function getDefaultShowcases() {
                 'Elements/Designs/Avory/Avory - AI UGC Ad - 002.mp4',
                 'Elements/Designs/Avory/hf_20260802_181707_09bd931a-dff0-4b6b-bb6e-ab4d0de9bc82.mp4'
             ]
+        },
+        {
+            id: 5,
+            title: 'Elova - Jewelries',
+            category: 'Jewelries & Accessories',
+            tools: ['Higgsfield', 'Seedance 2.5', 'Nano Banana Pro', 'DaVinci Resolve'],
+            visible: true,
+            images: [
+                'Elements/Designs/Elova - jewelries/hf_20260908_030244_49188248-a95f-4e15-80d7-e62fcec54db3.png',
+                'Elements/Designs/Elova - jewelries/hf_20260908_044749_82a8ef88-9627-4c30-887c-9fc5cbf306fd.png',
+                'Elements/Designs/Elova - jewelries/hf_20260908_051236_29d2d447-822a-435c-8e0d-785cc7142463.png',
+                'Elements/Designs/Elova - jewelries/Elova Podcast-Ai_003.mov',
+                'Elements/Designs/Elova - jewelries/Elova_Classic_Pearl_Necklace--Ad.mp4'
+            ]
         }
     ];
 }

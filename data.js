@@ -193,6 +193,20 @@ const defaultData = {
                 "Elements/Designs/Jewelries and Accessories/Travel Pendant Ad Graphics.jpg",
                 "Elements/Designs/Jewelries and Accessories/Travel Pendant.jpg"
             ]
+        },
+        {
+            id: 7,
+            title: "Elova - Jewelries",
+            category: "Jewelries & Accessories",
+            tools: ["Higgsfield", "Seedance 2.5", "Nano Banana Pro", "DaVinci Resolve"],
+            visible: true,
+            images: [
+                "Elements/Designs/Elova - jewelries/hf_20260908_030244_49188248-a95f-4e15-80d7-e62fcec54db3.png",
+                "Elements/Designs/Elova - jewelries/hf_20260908_044749_82a8ef88-9627-4c30-887c-9fc5cbf306fd.png",
+                "Elements/Designs/Elova - jewelries/hf_20260908_051236_29d2d447-822a-435c-8e0d-785cc7142463.png",
+                "Elements/Designs/Elova - jewelries/Elova Podcast-Ai_003.mov",
+                "Elements/Designs/Elova - jewelries/Elova_Classic_Pearl_Necklace--Ad.mp4"
+            ]
         }
     ],
     aiVideos: [
@@ -208,6 +222,20 @@ const defaultData = {
             src: "Elements/AI videos - Higgsfield/Avory - AI UGC Ad.mp4",
             title: "Avory - AI UGC Ad",
             tool: "Higgsfield | Premiere Pro",
+            ratio: "vertical"
+        },
+        {
+            id: 9,
+            src: "Elements/Designs/Elova - jewelries/Elova Podcast-Ai_003.mov",
+            title: "Elova Podcast-Ai_003",
+            tool: "Higgsfield | Seedance 2.5 | Nano Banana Pro | DaVinci Resolve",
+            ratio: "vertical"
+        },
+        {
+            id: 10,
+            src: "Elements/Designs/Elova - jewelries/Elova_Classic_Pearl_Necklace--Ad.mp4",
+            title: "Elova_Classic_Pearl_Necklace--Ad",
+            tool: "Higgsfield | Seedance 2.5 | Nano Banana Pro | DaVinci Resolve",
             ratio: "vertical"
         },
         {
@@ -242,13 +270,6 @@ const defaultData = {
             id: 7,
             src: "Elements/AI videos - Higgsfield/YTS-002.mp4",
             title: "YTS 002",
-            tool: "Higgsfield",
-            ratio: "vertical"
-        },
-        {
-            id: 8,
-            src: "Elements/AI videos - Higgsfield/YTS-007.mp4",
-            title: "YTS 007",
             tool: "Higgsfield",
             ratio: "vertical"
         }
@@ -313,6 +334,19 @@ function loadData() {
     const savedAIVideos = localStorage.getItem('portfolio_aiVideos');
     const savedAbout = localStorage.getItem('portfolio_about');
 
+    const aiVideos = (() => {
+        if (!savedAIVideos) return defaultData.aiVideos;
+        try {
+            const saved = JSON.parse(savedAIVideos);
+            if (!Array.isArray(saved) || saved.length < defaultData.aiVideos.length) return defaultData.aiVideos;
+            const hasElova = saved.some((v) => v.title && String(v.title).includes('Elova'));
+            if (!hasElova) return defaultData.aiVideos;
+            return saved;
+        } catch {
+            return defaultData.aiVideos;
+        }
+    })();
+
     return {
         profile: savedProfile ? JSON.parse(savedProfile) : defaultData.profile,
         social: savedSocial ? JSON.parse(savedSocial) : defaultData.social,
@@ -321,7 +355,7 @@ function loadData() {
         gallery: defaultData.gallery,
         showcases: defaultData.showcases,
         services: savedServices ? JSON.parse(savedServices) : defaultData.services,
-        aiVideos: savedAIVideos ? JSON.parse(savedAIVideos) : defaultData.aiVideos,
+        aiVideos: aiVideos,
         tools: defaultData.tools,
         beforeAfter: defaultData.beforeAfter,
         about: savedAbout ? JSON.parse(savedAbout) : defaultData.about
